@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="villis website with ntw stuff">
+  <meta name="keywords" content="ntw">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+  <title>villis NTW Site | Random-Generator</title>
+</head>
+
+<body>
+  <nav id="navbar">
+    <div class="container">
+      <h1 class="logo"><a href="https://www.youtube.com/watch?v=7tTJE41zV_4&t=39s&ab_channel=EmreHasMat">Dont Klick</a></h1>
+      <ul>
+        <li><a class="current" href="#"><span>Random-Generator</span></a></li>
+        <!-- <li><a href="pickBan.html">Pick-Ban</a></li> -->
+      </ul>
+    </div>
+  </nav>
+
+  <div id="showcase" class="backGrStandard">
+    <div class="container">
+      <div class="showcase-content">
+        <h1 id = "mapTxt">Be welcomed<span class="text-primary"> Random</span></h1>
+        <p class="lead" id = "teamsTxt">Create your lobby by adding players and clicking the ultra big button positioned below this text.
+            You can manage this, I have strong believe in you.
+        </p>
+        <button class="btn" id = "btnMain" onclick="createGame(false)">Create Game</button>
+        <button class="btn" id = "btnRevange" onclick="createGame(true)">Revange!</button>
+      </div>
+    </div>
+  </div>
+
+  <section id="selection-dis" class="bg-dark">
+    <div class="player-selection" id = "pS">
+        <input type="text" name="player1" id="name">
+        <input type="text" name="player2" id="name">
+        <input type="text" name="player3" id="name">
+        <input type="text" name="player4" id="name">
+        <input type="text" name="player5" id="name">
+        <input type="text" name="player6" id="name">
+    </div>
+    <div class="info-size">
+      <div class="settings-wrap">
+        <input type="checkbox" class="toggler" onclick="toggleMenuVisibility(this)">
+        <div class="hamburger"><div></div></div>
+        <div class="menu">
+          <div>
+            <div>
+              <div class="setRow">
+                <p>Civil war: </p>
+                <div>
+                  <button class="btn" id = "btnCwOn" onclick="handleCivilWar(this)">On</button>
+                  <button class="btnCur" id = "btnCwPart" onclick="handleCivilWar(this)">Partly</button>
+                  <button class="btn" id = "btnCwOff" onclick="handleCivilWar(this)">Off</button>
+                </div>
+              </div>
+              <div class="setRow">
+                <p>Balance Nations: </p>
+                <div>
+                  <button class="btnCur" id = "btnBnOn" onclick="handleBalanceNat(this)">On</button>
+                  <button class="btn" id = "btnBnOff" onclick="handleBalanceNat(this)">Off</button>
+                </div>
+              </div>
+              <div class="setRow">
+                <p>Max same nations: </p>
+                <div>
+                  <button class="btn" id = "btnMNat1" onclick="handleMaxSameNat(this)">1</button>
+                  <button class="btn" id = "btnMNat2" onclick="handleMaxSameNat(this)">2</button>
+                  <button class="btn" id = "btnMNat3" onclick="handleMaxSameNat(this)">3</button>
+                  <button class="btn" id = "btnMNat4" onclick="handleMaxSameNat(this)">6</button>
+                  <button class="btnCur" id = "btnMNat8" onclick="handleMaxSameNat(this)">No limit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2><span class="text-primary">Fella</span> select number of players</h2>
+      <div>
+        <button class="btn" id = "btn1" onclick="sSize(this)">1 vs 1</button>
+        <button class="btn" id = "btn2" onclick="sSize(this)">2 vs 2</button>
+        <button class="btnCur" id = "btn3" onclick="sSize(this)">3 vs 3</button>
+        <button class="btn" id = "btn4" onclick="sSize(this)">4 vs 4</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="clr"></div>
+  <footer id="main-footer">
+    <p>Villis ultra big random game creater, all right reserved or so. &hearts;</p>
+  </footer>
+
+  <script>
+    /*script for letting menu appear*/
+    function toggleMenuVisibility(e) {
+        let elM = document.getElementsByClassName("menu")[0]
+        let elMc = elM.querySelector("div")
+        
+        if (e.checked == true) {
+          elM.style.visibility = "visible"
+          elMc.style.transform = "scale(1)"
+          elMc.style.transitionDuration = "var(500)"
+          
+        } else {
+          elM.style.visibility = "hidden"
+          elMc.style.transform = "scale(0)"
+          elMc.style.transitionDuration = "var(500)"
+        }
+      }
+  </script>
+</body>
+</html>

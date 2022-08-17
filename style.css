@@ -1,0 +1,498 @@
+:root {
+  /* --primT: #f7c08a; */
+  --primT: hsl(155, 28%, 70%);
+  --lighterDark: rgb(179, 174, 174);
+  --mediumDark: rgb(88, 88, 88);
+  --dark: #444;
+  --darkerDark: #333;
+  --attackerRed: rgba(158, 78, 75, 0.15);
+  --defenderBlau: rgba(75, 122, 150, 0.15);
+  --settingCol: rgba(134, 134, 134, 0.97);
+  --niceCol: rgb(214, 238, 238);
+
+  --selHeight: 35vh;
+}
+
+
+/* Reset */
+* {
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+/* Main Styling */
+html,body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7em;
+}
+
+a {
+  color: var(--darkerDark);
+  text-decoration: none;
+}
+
+/* h1, h2, h3 {
+  padding-bottom: 20px;
+} */
+
+p {
+  margin: 10px 0;
+}
+
+/* Utility Classes */
+.container {
+  margin: auto;
+  max-width: 1100px;
+  overflow: auto;
+  padding: 0 20px;
+}
+
+.text-primary {
+  color: var(--primT);
+}
+
+.lead {
+  font-size: 20px;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 18px;
+  color: #fff;
+  background: var(--darkerDark);
+  padding: 13px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.btnCur{
+  display: inline-block;
+  font-size: 18px;
+  background: var(--primT);
+  color: var(--darkerDark);
+  padding: 13px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--primT);
+  color: var(--darkerDark);
+}
+
+.btn-light {
+  background: #f4f4f4;
+  color: var(--darkerDark);
+}
+
+.bg-dark {
+  background: var(--lighterDark);
+  color: #fff;
+}
+
+.bg-light {
+  background: #f4f4f4;
+  color: var(--darkerDark);
+}
+
+.bg-primary {
+  background: var(--primT);
+  color: var(--darkerDark);
+}
+
+.clr {
+  clear: both;
+}
+
+.l-heading {
+  font-size: 40px;
+}
+
+
+/* Padding */
+.py-1 { padding: 10px 0; }
+.py-2 { padding: 20px 0; }
+.py-3 { padding: 30px 0; }
+
+
+/*Player Selection*/
+.player-selection {
+  float: left;
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.player-selection input {
+  width: 50%;
+  padding: 10px 10px;
+  border: 1px #ddd solid;
+  text-align: center;
+  font-size: 20px;
+}
+
+.player-selection input:focus {
+  outline: none;
+  border-color: var(--primT);
+}
+
+.player-selection :nth-child(odd) {
+  background: var(--attackerRed);
+}
+
+.player-selection :nth-child(even) {
+  background: var(--defenderBlau);
+}
+
+
+/* Navbar */
+#navbar {
+  background: var(--darkerDark);
+  color: #fff;
+  overflow: auto;
+}
+
+#navbar a {
+  color: #fff;
+}
+
+#navbar h1 {
+  float: left;
+  padding-top: 20px;
+}
+
+#navbar ul {
+  list-style: none;
+  float: right;
+}
+
+#navbar ul li {
+  float: left;
+}
+
+#navbar ul li a {
+  height:  10vh;
+  min-height: 67px;
+  display: flex;
+  padding: 20px;
+  text-align: center;
+  align-items: center;
+}
+
+
+#navbar ul li a:hover, 
+#navbar ul li a.current {
+  background: #444;
+  color: var(--primT);
+}
+
+/* Showcase */
+#showcase {
+  overflow: hidden;
+  background: url('map1.png') no-repeat center center/cover;
+  height: 55vh;
+}
+
+
+#showcase .showcase-content {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding-top: 12vh;
+}
+
+#showcase .showcase-content h1 {
+  font-size: 60px;
+  line-height: 1.2em;
+  padding-bottom: 10px;
+}
+
+#showcase .showcase-content p {
+  padding-bottom: 20px;
+  line-height: 1.7em;
+}
+
+/* size-info */
+#selection-dis {
+  height: var(--selHeight);
+}
+
+#selection-dis .player-selection {
+  height: 100%;
+}
+
+
+#selection-dis .info-size {
+  position: relative;
+  float: right;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  padding: 10px 20px;
+  overflow: hidden;
+  background: var(--dark);
+}
+
+#selection-dis .info-size h2{
+  height: 50%;
+  width: 100%;
+  padding-top: 40px;
+}
+
+#selection-dis button {
+  float: center; 
+}
+
+
+.settings-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  width: 70px;
+  height: 60px;
+}
+
+.settings-wrap .toggler {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  cursor: pointer;
+  width: 70px;
+  height: 60px;
+  opacity: 0;
+}
+
+.settings-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 70px;
+  height: 60px;
+  padding: 12px;
+  background: var(--darkerDark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hamburger Line */
+.settings-wrap .hamburger > div {
+  position: relative;
+  flex: none;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+
+/* Hamburger Lines - Top & Bottom */
+.settings-wrap .hamburger > div::before,
+.settings-wrap .hamburger > div::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -8px;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+}
+
+/* Moves Line Down */
+.settings-wrap .hamburger > div::after {
+  top: 8px;
+}
+
+/* Toggler Animation */
+.settings-wrap .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+
+/* Turns Lines Into X */
+.settings-wrap .toggler:checked + .hamburger > div:before,
+.settings-wrap .toggler:checked + .hamburger > div:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* Rotate On Hover When Checked */
+.settings-wrap .toggler:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
+}
+
+/* Show Menu */
+/* .toggler:checked ~ .menu{
+  visibility: visible;
+}
+
+.toggler:checked ~ .menu > div {
+  transform: scale(1);
+  transition-duration: var(500);
+} */
+
+.menu {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/*Set hight width to each menue seperatly*/
+#selection-dis .settings-wrap .menu{
+  width: 50vw;
+  height: var(--selHeight);
+}
+
+.menu > div {
+  background: var(--settingCol);
+  border-radius: 50%;
+  width: 1000px;
+  height: 1000px;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  transition: all 0.4s ease;
+}
+
+
+/*Setting button rows*/
+.setRow {
+  display: flex;
+  padding: 15px;
+  width: 50vw;
+}
+
+.setRow > p {
+  padding-right: 20px;
+  padding-left: 15%;
+  font-size: 20px;
+  width: 50%;
+  text-align: left;
+}
+
+.setRow > div {
+  display: flex;
+  width: 50%;
+  background-color: antiquewhite;
+}
+
+.setRow > div > button {
+  float: center;
+}
+
+
+/*Pick-Ban Main*/
+.mainDiv {
+  height: 90vh;
+  overflow: hidden;
+  background-color: var(--lighterDark);
+}
+
+.mainDiv #lTunderM {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.mainDiv #lTunderM #lTheading{
+  height: 60%;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  line-height: 2.5em;
+}
+
+/* .mainDiv #lTunderM #lTheading h2{
+  padding-bottom: 40px;
+} */
+
+.mainDiv #lTunderM #lTbuttons{
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainDiv .pbSection1 {
+  height: 90vh;
+  /* background: rgb(223, 169, 169); */
+}
+
+.mainDiv .pbSection2 {
+  height: 90vh;
+}
+
+.mainDiv .pbSection3 {
+  height: 90vh;
+}
+
+.mainDiv .secLeft {
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+.mainDiv .secRight {
+  float: right;
+  width: 50%;
+  height: 100%;
+}
+
+.mainDiv .secTopLeft {
+  position: relative;
+  height: 60%;
+  width: 100%;
+  background: var(--mediumDark);
+}
+
+.mainDiv .secTopRight {
+  height: 40%;
+  width: 100%;
+}
+
+.mainDiv .secBotLeft {
+  height: 40%;
+  width: 100%;
+}
+
+.mainDiv .secBotRight {
+  height: 60%;
+  width: 100%;
+  background: var(--mediumDark);
+}
+
+
+/*MainDiv Setting Menue*/
+/*Set hight width to each menue seperatly*/
+.mainDiv .menu{
+  width: 100%;
+  height: 100%;
+}
+
+/* Footer */
+#main-footer {
+  text-align: center;
+  background: var(--darkerDark);
+  color: #fff;
+  padding: 20px;
+  /* height: 10vh;
+  min-height: 67px; */
+}

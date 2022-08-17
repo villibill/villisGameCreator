@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>villis NTW Site | Pick-Ban-System</title>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="container">
+          <h1 class="logo"><a href="https://www.youtube.com/watch?v=fu6J0c9ySJA&ab_channel=EmperorDion">Dont Klick</a></h1>
+          <ul>
+            <li><a href="index.html">Random-Generator</a></li>
+            <li><a class ="current" href="#">Pick-Ban</a></li>
+          </ul>
+        </div>
+    </nav>
+
+    <div class = "mainDiv" id = "mainDiv">
+      <div class = "pbSection1" id = "sec1">
+        <div class="secLeft">
+          <div class="secTopLeft">
+            <div class="settings-wrap">
+              <input type="checkbox" class="toggler" onclick="toggleMenuVisibility(this)">
+              <div class="hamburger"><div></div></div>
+            </div>
+            <div class="menu">
+              <div>
+                <div>
+                  <span>test</span>
+                </div>
+              </div>
+            </div>
+            <div id = "lTunderM">
+              <div id = "lTheading">
+                <h2><span class="text-primary">Hello Lad</span> ,select number of players participating<br>
+                and fill in their names.</h2>
+              </div>
+              <div id = "lTbuttons">
+                <div>
+                  <button class="btn" id = "btn1" onclick="sSize(this)">1 vs 1</button>
+                  <button class="btn" id = "btn2" onclick="sSize(this)">2 vs 2</button>
+                  <button class="btnCur" id = "btn3" onclick="sSize(this)">3 vs 3</button>
+                  <button class="btn" id = "btn4" onclick="sSize(this)">4 vs 4</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="secBotLeft player-selection">
+            <input type="text" name="player1" id="name">
+            <input type="text" name="player2" id="name">
+            <input type="text" name="player3" id="name">
+            <input type="text" name="player4" id="name">
+            <input type="text" name="player5" id="name">
+            <input type="text" name="player6" id="name">
+          </div>
+        </div>
+        <div class="secRight">
+          <div class="secTopRight">
+            <button class="btn" id = "btnStart">Start Pick-Ban</button>
+          </div>
+          <div class="secBotRight"></div>
+        </div>
+      </div>
+      <div class = "pbSection2" id = sec2>
+        <div class="secLeft">
+          <div class="secTopLeft"></div>
+          <div class="secBotLeft"></div>
+        </div>
+        <div class="secRight">
+          <div class="secTopRight">
+            <button id = "btn22" class="btn help">gabis</button>
+          </div>
+          <div class="secBotRight"></div>
+        </div>
+      </div>
+      <div class = "pbSection3" id = "sec3">
+        <div class="secLeft">
+          <div class="secTopLeft"></div>
+          <div class="secBotLeft"></div>
+        </div>
+        <div class="secRight">
+          <div class="secTopRight">
+            <button id = "btn33" class="btn help">gabis</button>
+          </div>
+          <div class="secBotRight"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer id="main-footer">
+        <p>Villis ultra big random game creater, all right reserved or so. &hearts;</p>
+    </footer>
+
+    <script>
+      document.getElementById('btnStart').addEventListener('click', e => {
+        e.preventDefault();
+        document.getElementById('mainDiv').scrollTo({top: window.innerHeight * 0.9, behavior: 'smooth'});
+      });
+      document.getElementById('btn22').addEventListener('click', e => {
+        e.preventDefault();
+        document.getElementById('mainDiv').scrollTo({top: window.innerHeight * 1.8, behavior: 'smooth'});
+      });
+      document.getElementById('btn33').addEventListener('click', e => {
+        e.preventDefault();
+        document.getElementById('mainDiv').scrollTo({top: 0, behavior: 'smooth'});
+      });
+
+      /*script for letting menu appear*/
+      function toggleMenuVisibility(e) {
+        let elM = document.getElementsByClassName("menu")[0]
+        let elMc = elM.querySelector("div")
+        
+        if (e.checked == true) {
+          elM.style.visibility = "visible"
+          elMc.style.transform = "scale(1)"
+          elMc.style.transitionDuration = "var(500)"
+          
+        } else {
+          elM.style.visibility = "hidden"
+          elMc.style.transform = "scale(0)"
+          elMc.style.transitionDuration = "var(500)"
+        }
+      }
+    </script>
+</body>
+</html>
