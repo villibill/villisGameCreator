@@ -1,3 +1,3 @@
 ## villisGameCreator ##  
   
-#### Link: #### https://villibill.github.io/villisGameCreator/
+#### Link: https://villibill.github.io/villisGameCreator/
